@@ -108,6 +108,12 @@ main {
     margin-bottom: 10px;
 }
 
+.cover-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: auto;
+}
 
 @media (max-width: 1200px) {
 
