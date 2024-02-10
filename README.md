@@ -1,5 +1,9 @@
 # Twitter Clone
 
+## Figma Concept
+![sign-up/log-in_page](./assets/figma/log-in_sign-up_page.png)
+![main_page](./assets/figma/profile_home_page.png)
+
 ## Repository Owner
 
 - Each group must assign one repository owner
