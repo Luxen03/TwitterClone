@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -136,14 +135,14 @@ main {
     color:white;
 }
 
-.cover-Photo {
+.cover-photo {
     position: relative; /* Change absolute to relative */
     width: 100%; /* Make width responsive */
     height: 200px; /* Fixed height */
     overflow: hidden; /* Hide overflowing content */
 }
 
-.cover-Photo img {
+.cover-photo img {
     width: 100%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
 }
@@ -183,4 +182,3 @@ main {
 .hidden {
     display: none;
 }
-
