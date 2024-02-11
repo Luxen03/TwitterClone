@@ -89,7 +89,11 @@ main {
 
 .feed {
     flex: 3;
+<<<<<<< HEAD
     /* padding: 20px; */
+=======
+    padding: 20px;
+>>>>>>> 713a12cb9365c2a6a2232bb54ce9b0ba5ae9fd9c
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -126,29 +130,83 @@ main {
     border: 1px solid #d6d6d6;
     padding: 20px;
     text-align: center;
-    line-height: 100px;
     border-radius: 10px;
     margin: 20px;
 }
 
+.post input[type="text"] {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    width: 900px;
+    height: 100px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 25px; 
+    outline: none;
+}
+
+
 .post button {
     position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 100px;
     height: 35px;
     border: solid #ffffff;
+<<<<<<< HEAD
     background-color: var(--m_c2);
     bottom: 10px;
     right: 10px;
+=======
+    background-color: #3C405B;
+>>>>>>> 713a12cb9365c2a6a2232bb54ce9b0ba5ae9fd9c
     border-radius: 15px;
     color: white;
 }
 
+.twt {
+    position: relative;
+    width: auto;
+    height: 150px;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.twt a {
+    position: absolute;
+}
+
+.twt img {
+    width: 30px;
+    height: auto;
+    top:80%;
+}
+
+.heart-btn {
+    top: 75%;
+    left: 50%; 
+
+}
+
+.reply-btn {
+    bottom: 10px; 
+    left: 10px; 
+}
+
+
+
 .post button:hover {
-    background-color: #5A5F89; /* Change background color on hover */
+    background-color: #5A5F89; 
 }
 
 .post button:active {
-    background-color: #1F1F3D; /* Change background color when clicked */
+    background-color: #1F1F3D; 
 }
 
 .profile {
@@ -156,10 +214,17 @@ main {
 }
 
 .cover-photo {
+<<<<<<< HEAD
     position: relative;
     width: 100%;
     height: 200px;
     overflow: hidden;
+=======
+    position: relative; 
+    width: 100%; /* Make width responsive */
+    height: 200px; /* Fixed height */
+    overflow: hidden; /* Hide overflowing content */
+>>>>>>> 713a12cb9365c2a6a2232bb54ce9b0ba5ae9fd9c
 }
 
 .cover-photo img {
