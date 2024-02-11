@@ -147,9 +147,21 @@ main {
     height: auto; /* Maintain aspect ratio */
 }
 
+.dp-holder{
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+
+.dp-holder img{
+    width: 50%;
+}
+
 .profile-name{
     font-family: 'Actor', sans-serif;
     font-size: 15px;
+
 }
 
 @media (max-width: 1200px) {
