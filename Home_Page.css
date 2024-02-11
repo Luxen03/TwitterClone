@@ -111,28 +111,36 @@ main {
     margin-bottom: 10px;
 }
 
-.post{
-    position: relative; /* Set the position of the box to relative */
-    width: auto; /* Set the width of the box */
-    height: 150px; /* Set the height of the box */
-    background-color: #ffffff; /* Set the background color of the box */
-    border: 1px solid #d6d6d6; /* Add a border around the box */
-    padding: 20px; /* Add some padding inside the box */
-    text-align: center; /* Align text to the center */
-    line-height: 100px; 
+.post {
+    position: relative;
+    width: auto;
+    height: 150px;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    padding: 20px;
+    text-align: center;
+    line-height: 100px;
     border-radius: 10px;
 }
 
-.post button{
-    position: absolute; /* Set the position of the button to absolute */
+.post button {
+    position: absolute;
     width: 100px;
     height: 35px;
     border: solid #ffffff;
     background-color: #3C405B;
-    bottom: 10px; /* Set the distance from the bottom */
-    right: 10px; /* Set the distance from the right */
+    bottom: 10px;
+    right: 10px;
     border-radius: 15px;
-    color:white;
+    color: white;
+}
+
+.post button:hover {
+    background-color: #5A5F89; /* Change background color on hover */
+}
+
+.post button:active {
+    background-color: #1F1F3D; /* Change background color when clicked */
 }
 
 .cover-photo {
