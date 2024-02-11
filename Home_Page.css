@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --m_c1: #212429;
+    --m_c2: #3c405b;
+    --m_c3: #D9D9D9;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0; 
@@ -83,7 +89,7 @@ main {
 
 .feed {
     flex: 3;
-    padding: 20px;/* padding: 20px; */
+    /* padding: 20px; */
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -108,7 +114,8 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 50px;
-    margin-bottom: 10px;
+    margin: 20px
+    
 }
 
 .post {
@@ -121,6 +128,7 @@ main {
     text-align: center;
     line-height: 100px;
     border-radius: 10px;
+    margin: 20px;
 }
 
 .post button {
@@ -128,7 +136,7 @@ main {
     width: 100px;
     height: 35px;
     border: solid #ffffff;
-    background-color: #3C405B;
+    background-color: var(--m_c2);
     bottom: 10px;
     right: 10px;
     border-radius: 15px;
@@ -143,33 +151,53 @@ main {
     background-color: #1F1F3D; /* Change background color when clicked */
 }
 
+.profile {
+    text-align: center;
+}
+
 .cover-photo {
-    position: relative; /* Change absolute to relative */
-    width: 100%; /* Make width responsive */
-    height: 200px; /* Fixed height */
-    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
 }
 
 .cover-photo img {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
 }
 
-.dp-holder{
+.dp-holder {
     display: block;
     position: absolute;
     top: 15%;
     left: 40%;
 }
 
-.dp-holder img{
+.dp-holder img {
     width: 50%;
 }
 
-.profile-name{
+.h2
+{
+    text-align: center;
+}
+
+.profile-name {
+    display: block;
     font-family: 'Actor', sans-serif;
     font-size: 15px;
+    text-align: center; /* Center the text */
+    position: absolute;
+    top: 43%;
+    left: 46.6%; /* Center the profile name horizontally */
+    transform: translateX(-50%); /* Center the profile name horizontally */
+}
 
+.posts button{
+display: block;
+border: solid white;
+background-color: transparent;
 }
 
 @media (max-width: 1200px) {
