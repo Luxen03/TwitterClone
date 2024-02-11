@@ -137,13 +137,13 @@ main {
 }
 
 .cover-photo {
-    display: block;
+    display: flex;
     position: relative;
     width: 1200px;  
 }
 
 .dp-holder{
-    display: block;
+    display: flex;
     position: absolute; /* Changed to absolute positioning */
     top: 15%; /* Adjust the top position as needed */
     left: 40%; /* Adjust the left position as needed */
