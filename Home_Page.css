@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --m_c1: #212429;
-    --m_c2: #3c405b;
-    --m_c3: #D9D9D9;
-}
-
 body {
     font-family: Arial, sans-serif;
     margin: 0; 
@@ -89,11 +83,7 @@ main {
 
 .feed {
     flex: 3;
-<<<<<<< HEAD
-    /* padding: 20px; */
-=======
     padding: 20px;
->>>>>>> 713a12cb9365c2a6a2232bb54ce9b0ba5ae9fd9c
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -118,8 +108,7 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 50px;
-    margin: 20px
-    
+    margin-bottom: 10px;
 }
 
 .post {
@@ -131,7 +120,6 @@ main {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-    margin: 20px;
 }
 
 .post input[type="text"] {
@@ -154,13 +142,7 @@ main {
     width: 100px;
     height: 35px;
     border: solid #ffffff;
-<<<<<<< HEAD
-    background-color: var(--m_c2);
-    bottom: 10px;
-    right: 10px;
-=======
     background-color: #3C405B;
->>>>>>> 713a12cb9365c2a6a2232bb54ce9b0ba5ae9fd9c
     border-radius: 15px;
     color: white;
 }
@@ -208,60 +190,33 @@ main {
     background-color: #1F1F3D; 
 }
 
-.profile {
-    text-align: center;
-}
-
 .cover-photo {
-<<<<<<< HEAD
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-=======
     position: relative; 
     width: 100%; /* Make width responsive */
     height: 200px; /* Fixed height */
     overflow: hidden; /* Hide overflowing content */
->>>>>>> 713a12cb9365c2a6a2232bb54ce9b0ba5ae9fd9c
 }
 
 .cover-photo img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.dp-holder {
+.dp-holder{
     display: block;
     position: absolute;
     top: 15%;
     left: 40%;
 }
 
-.dp-holder img {
+.dp-holder img{
     width: 50%;
 }
 
-.h2
-{
-    text-align: center;
-}
-
-.profile-name {
-    display: block;
+.profile-name{
     font-family: 'Actor', sans-serif;
     font-size: 15px;
-    text-align: center; /* Center the text */
-    position: absolute;
-    top: 43%;
-    left: 46.6%; /* Center the profile name horizontally */
-    transform: translateX(-50%); /* Center the profile name horizontally */
-}
 
-.posts button{
-display: block;
-border: solid white;
-background-color: transparent;
 }
 
 @media (max-width: 1200px) {
