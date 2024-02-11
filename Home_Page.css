@@ -84,7 +84,7 @@ main {
 
 .feed {
     flex: 3;
-    /* padding: 20px; */
+    padding: 20px;/* padding: 20px; */
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -137,17 +137,17 @@ main {
 }
 
 .cover-photo {
-    display: block;
+    display: flex;
     position: relative;
-    width: 1200px;  
+    width: auto;  
 }
 
 .dp-holder{
-    display: block;
+    display: flex;
     position: absolute; /* Changed to absolute positioning */
     top: 15%; /* Adjust the top position as needed */
     left: 40%; /* Adjust the left position as needed */
-    width: 250px;
+    width: auto;
     height: 250px;
 }
 
@@ -155,6 +155,7 @@ main {
     font-family: 'Actor', sans-serif;
     font-size: 15px;
 }
+
 @media (max-width: 1200px) {
 
     h1 {
@@ -182,9 +183,6 @@ main {
     }
 }
 
-/* Your existing CSS styles */
-
-/* Hide all sections initially */
 .hidden {
     display: none;
 }
