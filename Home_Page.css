@@ -141,3 +141,11 @@ main {
         font-size: 10px;
     }
 }
+
+/* Your existing CSS styles */
+
+/* Hide all sections initially */
+.hidden {
+    display: none;
+}
+

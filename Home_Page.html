@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="Home_Page.css">
+    <style>
+        nav {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,7 +33,7 @@
             </li>
             <li>
                 <img src="./assets/Icons/settings.png" class="nav-image" alt="Settings">
-                <a href="#">Settings</a>
+                <a href="#settings">Settings</a>
             </li>
             <li>
                 <img src="./assets/Icons/logout.png" class="nav-image" alt="Logout">
@@ -37,21 +42,32 @@
         </ul>
     </nav>
 
-    <section id="profile">
-        <img src="./assets/Icons/beautiful-cover.jpg" alt="Cover Photo" class="cover-photo">
-        <!-- Profile content goes here -->
-    </section>
-
     <section class="feed">
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-        </div>
+        <section id="home">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+            </div>
+        </section>
+        
+        <section id="profile" class="hidden">
+            profile page
+        </section>
+        
+        <section id="notifications" class="hidden">
+            notification page
+        </section>
+
+        <section id="settings" class="hidden">
+            settings page
+        </section>
     </section>
 
     <aside class="sidebar">
         <h2>Suggested for you</h2>
     </aside>
 </main>
-    
+
+<script src="Home_Page.js"></script> <!-- Include the JavaScript file here -->
+
 </body>
 </html>
