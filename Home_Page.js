@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
-                document.querySelectorAll('.feed section').forEach(function(section) {
+                document.querySelectorAll('main section').forEach(function(section) {
                     section.classList.add('hidden');
                 });
                 targetSection.classList.remove('hidden');
