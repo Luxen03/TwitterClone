@@ -136,14 +136,14 @@ main {
     color:white;
 }
 
-.cover-photo {
+.cover-Photo {
     position: relative; /* Change absolute to relative */
     width: 100%; /* Make width responsive */
     height: 200px; /* Fixed height */
     overflow: hidden; /* Hide overflowing content */
 }
 
-.cover-photo img {
+.cover-Photo img {
     width: 100%; /* Make image responsive */
     height: auto; /* Maintain aspect ratio */
 }
