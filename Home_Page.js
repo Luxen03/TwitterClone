@@ -104,7 +104,6 @@ async function likePost(_id) {
 async function start() {
     await register("joblipat", "password");
     await login("joblipat", "password");
-    await makePost();
     await getPosts();
     await likePost("nVk5ws2BxX8sHKaKq_Pbx");
 }
