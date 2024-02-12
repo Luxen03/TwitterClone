@@ -48,17 +48,26 @@
             </div>
 
             <div class='post'>
-                <input type="text" placeholder="What's Happening?!" class="text-box">
-                <button>POST</button>
+                <input type="text" placeholder="What's Happening?!" class="text-box" id="Text-Box">
+                <button onclick="makePost();">POST</button>
             </div>
 
-            <div class="twt">
-                <a class="heart-btn" href="#">
-                    <img src="./assets/Icons/heart.png" alt="Heart icon">
-                </a>
-                <a class="reply-btn" href="#">
-                    <img src="./assets/Icons/reply.png" alt="Reply icon">
-                </a>
+            <div class="twt" id="prefab">
+                <div class="post-header">
+                    <img src="./assets/Icons/blank_profile_icon.png" class="post-pfp">
+                    <h4 class="post-username">Username</h4>
+                </div>
+                <p class="post-content">=== Sample Content===</p>
+                <div class="post-footer">
+                    <a class="like-btn" href="#">
+                        <img src="./assets/Icons/heart.png" alt="Heart icon">
+                        <p>0</p>
+                    </a>
+                    <a class="reply-btn" href="#">
+                        <img src="./assets/Icons/reply.png" alt="Reply icon">
+                        <p>0</p>
+                    </a>
+                </div>
             </div>
             
         </section>
@@ -101,7 +110,7 @@
         <h2>Suggested for you</h2>
 
         <div class="trends">
-            <h2>Trends for you</h2
+            <h2>Trends for you</h2>
         </div>
     </aside>
 </main>
