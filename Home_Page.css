@@ -265,34 +265,32 @@ section {
     border: none;
     background-color: inherit;
     cursor: pointer;
-    position: relative; /* Add position relative for pseudo-element */
-    text-decoration: none; /* Remove default underline */
-}
-
-.button:hover {
     position: relative;
-    overflow: hidden;
+    text-decoration: none;
+    overflow: hidden; 
 }
 
-.button::after {
+
+.button::before {
     content: '';
     position: absolute;
-    left: 0;
     bottom: 0;
-    height: 2px;
+    left: 0;
     width: 100%;
-    background-color: #fff; /* Change color as needed */
-    transform: scaleX(0); /* Initially, the underline is invisible */
-    transition: transform 0.3s ease; /* Smooth transition effect */
+    height: 2px;
+    background-color:black; 
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
 }
 
-.button:hover::after {
-    transform: scaleX(1); /* When hovering, the underline expands */
+
+.button:hover::before {
+    transform: scaleX(1); 
 }
 
   .divider {
     position: absolute;
-    top: calc(50% + 10px); /* Adjust the distance from the top */
+    top: calc(50% + 10px); 
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -302,11 +300,34 @@ section {
 }
 
 nav {
-    z-index: 2; /* Ensure the navbar is above the container and divider */
+    z-index: 2; 
 }
 
 .sidebar {
-    z-index: 2; /* Ensure the sidebar is above the container and divider */
+    z-index: 2; 
+}
+
+.profile-posts {
+    position: relative;
+    top: 35%;
+    width: auto;
+    height: 150px;
+    background-color: #ffffff;
+    border: 1px solid #d6d6d6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.profile-posts a {
+    position: absolute;
+}
+
+.profile-posts img {
+    width: 30px;
+    height: auto;
+    top:80%;
 }
 
 @media (max-width: 1200px) {
