@@ -42,19 +42,15 @@
         </ul>
     </nav>
 
-    <section class="feed">
         <section id="home">
             <div class="search-box">
                 <input type="text" placeholder="Search...">
             </div>
 
-            
-
             <div class='post'>
                 <input type="text" placeholder="What's Happening?!" class="text-box">
                 <button>POST</button>
             </div>
-            
 
             <div class="twt">
                 <a class="heart-btn" href="#">
@@ -77,16 +73,101 @@
             <div class="profile-name">
                 <h2>Profile Name</h2>
             </div>
+            <div class="container">
+                <button class="button">Posts</button>
+                <button class="button">Likes</button>
+            </div>
+            <div class="divider"></div>
+            <div class="profile-posts">
+                <a class="heart-btn" href="#">
+                    <img src="./assets/Icons/heart.png" alt="Heart icon">
+                </a>
+                <a class="reply-btn" href="#">
+                    <img src="./assets/Icons/reply.png" alt="Reply icon">
+                </a>
+            </div>
         </section>
         
-        <section id="notifications" class="hidden">
-            notification pages
+        <section id="notifications" class="notification-section">
+            <h2 class="notification-title">Notifications</h2>
+            <section class="notification-bar">
+                <div class="notification-options">
+                    <div class="notification-option active" data-option="all">All</div>
+                    <div class="notification-option" data-option="verified">Verified</div>
+                    <div class="notification-option" data-option="mentions">Mentions</div>
+                </div>
+            </section>
         </section>
 
         <section id="settings" class="hidden">
-            settings page
+            <h2 class="section-title">Settings</h2>
+            <div class="settings-content">
+                <div class="setting">
+                    <span class="setting-label">Notifications:</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Dark Mode:</span>
+                    <label class="switch" for="dark-mode-switch">
+                        <input type="checkbox" id="dark-mode-switch">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <div class="setting">
+                    <span class="setting-label">Language:</span>
+                    <select class="language-select">
+                        <option value="en">English</option>
+                        <option value="en">Default</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Email Notifications:</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Auto Save Drafts:</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Privacy Settings:</span>
+                    <a href="#" class="setting-link">Manage</a>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Notification Preferences:</span>
+                    <select class="notification-preferences">
+                        <option value="all">All</option>
+                        <option value="verified">Verified</option>
+                        <option value="mentions">Mentions</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Auto Login:</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="setting">
+                    <span class="setting-label">Notification Sound:</span>
+                    <select class="sound-select">
+                        <option value="default">Default</option>
+                        <option value="bell">Bell</option>
+                        <option value="chime">Chime</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+            </div>
         </section>
-    </section>
 
     <aside class="sidebar">
         <h2>Suggested for you</h2>
