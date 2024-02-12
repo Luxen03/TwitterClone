@@ -10,7 +10,7 @@ import swaggerUi from "swagger-ui-express";
 import authRoutes from "./routes/AuthRoutes.js";
 import postsRoutes from "./routes/PostsRoutes.js";
 import followersRoutes from "./routes/FollowersRoutes.js";
-import openApiSpecs from "./docs/openapi.json" with { type: "json" };
+import openApiSpecs from "./docs/openapi.json" assert { type: "json" };
 
 const app = express();
 
