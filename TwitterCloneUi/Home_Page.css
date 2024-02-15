@@ -592,6 +592,8 @@ input:checked + .slider:before {
 
 .followUser {
     margin-right: 20px;
+    cursor: default;
+
 }
 
 
