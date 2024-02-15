@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="Home_Page.css">
+    <style>
+        nav {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <nav class="navigation-bar">
+        <ul>
+            <li>
+                <img src="./assets/Icons/logo.png" class="nav-image logo" alt="Logo">
+                N-stant Gum
+            </li>
+            <li><img src="./assets/Icons/profile_icon.png" class="nav-image" alt="Profile">
+                <a onclick="checkSelfProfile()">Profile</a>
+            </li>
+            <li>
+                <img src="./assets/Icons/home.png" class="nav-image" alt="Home">
+                <a href="Home_Page.html">Home</a>
+            </li>
+            <li>
+                <img src="./assets/Icons/notif.png" class="nav-image" alt="Notifications">
+                <a href="#notifications">Notifications</a>
+            </li>
+            <li>
+                <img src="./assets/Icons/settings.png" class="nav-image" alt="Settings">
+                <a href="#settings">Settings</a>
+            </li>
+            <li>
+                <img src="./assets/Icons/logout.png" class="nav-image" alt="Logout">
+                <span onclick="handleLogOut()">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="profile">
+        <div class="cover-photo">
+            <img src="./assets/Icons/cover-photo.jpg" alt="Cover Photo" >
+        </div>
+        <div class="dp-holder">
+            <img src="./assets/Icons/white-circle.png" alt="dp holder" >
+        </div>
+        <div class="profile-name">
+            <h2 id="changeName">Profile Name</h2>
+        </div>
+        <div class="follow">
+            <button class="button">Following</button>
+            <button class="button">Followers</button>
+        </div>
+        <div class="container">
+            <button class="button">Posts</button>
+            <button class="button">Likes</button>
+        </div>
+        <div class="divider"></div>
+
+        <!-- newPosts -->
+        <div class="twt" id="prefab">
+            <div class="post-header">
+                <img src="./assets/Icons/blank_profile_icon.png" class="post-pfp">
+                <h4 class="post-username">Username</h4>
+            </div>
+            <p class="post-content">=== Sample Content===</p>
+            <div class="post-footer">
+                <button class="like-btn" onclick="likePost(this);">
+                    <img src="./assets/Icons/heart.png" alt="Heart icon">
+                    <p>0</p>
+                </a>
+                <button class="reply-btn">
+                    <img src="./assets/Icons/reply.png" alt="Reply icon">
+                    <p>0</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+<aside class="sidebar">
+    <div class="suggested">
+        <h2>Suggested for you</h2>
+            
+    </div>
+    
+    <div class="trends">
+        <h2>Trends for you</h2>
+    </div>
+    <nav class="trending">
+        <ul>
+            <li>
+                1 · Holidays · Trending
+                <h3>Happy Valentines</h3>
+            </li>
+            <li>
+                2 · Trending
+                <h3>Drake</h3>
+            </li>
+            <li>
+                3 · Trending
+                <h3>DK GROOVIN OUT NOW</h3>
+            </li>
+            <li>
+                4 · K-pop · Trending
+                <h3>#DONGHYUK</h3>
+            </li>
+            <li>
+                5 · K-pop · Trending
+                <h3>#NAKSEO</h3>
+            </li>
+            <li>
+                6 · Trending
+                <h3>Keria</h3>
+            </li>
+        </ul>
+    </nav>
+        
+</aside>
+</main>
+
+<!-- <script src="Home_Page.js"></script>  -->
+<script>
+function handleLogOut() {
+    window.location.href = "index.html";
+}
+
+const username = new URLSearchParams(window.location.search).get("username")
+document.getElementById('changeName').textContent = username;
+</script>
+<script src="profile.js"></script> 
+</body>
+</html>
