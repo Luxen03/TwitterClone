@@ -41,23 +41,30 @@
         }
 
         async function handleLogin() {
-            if (!isSignUpToggled) {
+            if (!(TF.username.value == '' || TF.password.password == '')) {
+                if (!isSignUpToggled) {
                 const tokenPromise = login(TF.username.value, TF.password.value);
                 tokenPromise.then((fulfilledValue) => {
                     if (fulfilledValue != 'Unauthorized') {
-                        console.log("logged!")
+                        window.location.href = "Home_Page.html";
+                        localStorage.setItem("curUser", TF.username.value);
+                        localStorage.setItem("tokenID", fulfilledValue); 
                     }
                 });
                             
-            } else {
-                const tokenPromise = register(TF.username.value, TF.password.value);
-                tokenPromise.then((fulfilledValue) => {
-                    if (fulfilledValue == 'User created') {
-                        console.log("Registered!")
-                    }
+                } else {
+                    const tokenPromise = register(TF.username.value, TF.password.value);
+                    tokenPromise.then((fulfilledValue) => {
+                        if (fulfilledValue == 'User created') {
+                            alert("Account Successfully Registered!")
+                        }
 
-                });
+                    });
+                }
+            } else {
+                alert("Invalid Inputs!");
             }
+            
 
         } 
 

@@ -1,3 +1,13 @@
+var curUser = localStorage.getItem("curUser");
+var tokenG = localStorage.getItem("tokenID");
+document.addEventListener('DOMContentLoaded', function() {
+    var profileName = document.getElementById('changeName');
+    // console.log(curUser);
+    console.log(curUser);
+    profileName.innerHTML = curUser;
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
     navLinks.forEach(function(link) {
@@ -5,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
+            console.log(targetId);
+            console.log(targetSection);
             if (targetSection) {
                 document.querySelectorAll('main section').forEach(function(section) {
                     section.classList.add('hidden');
@@ -140,35 +152,6 @@ function AddNewPost(username, content, likes, replies, postID) {
     post.children[2].children[0].children[1].innerHTML = likes;
     post.children[2].children[1].children[1].innerHTML = replies;
 }
-async function register(_username, _password) {
-    const res = await fetch("http://localhost:3000/api/v1/auth/register", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: _username,
-            password: _password
-        })
-    })
-    return await res.text()
-}
-
-async function login(_username, _password) {
-    const res = await fetch("http://localhost:3000/api/v1/auth/login", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: _username,
-            password: _password
-        })
-    })
-    username = _username;
-    token = await res.text()
-    console.log(token);
-}
 
 async function makePost() {
     let _content = document.getElementById("Text-Box").value;
@@ -176,21 +159,21 @@ async function makePost() {
     let data = await fetch("http://localhost:3000/api/v1/posts", {
         method: "POST",
         headers: {
-            'Authorization': 'Bearer ' + token,
+            'Authorization': 'Bearer ' + tokenG,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             content: _content
         })
     });
-    AddNewPost(username, _content, 0, 0);
+    AddNewPost(curUser, _content, 0, 0);
 }
 
 async function getPosts() {
     let data = await fetch("http://localhost:3000/api/v1/posts", {
         method: "GET",
         headers: {
-            'Authorization': 'Bearer ' + token,
+            'Authorization': 'Bearer ' + tokenG,
             'Content-Type': 'application/json'
         }
     }).then(res => res.json());
@@ -203,7 +186,7 @@ async function likePost(_post) {
     let data = await fetch("http://localhost:3000/api/v1/posts/" + _post.parentNode.parentNode.getAttribute('id'), {
         method: "PATCH",
         headers: {
-            'Authorization': 'Bearer ' + token,
+            'Authorization': 'Bearer ' + tokenG,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -215,10 +198,7 @@ async function likePost(_post) {
 }
 //temporary actions
 async function start() {
-    await register("joblipat", "password");
-    await login("joblipat", "password");
     await getPosts();
-    await likePost("nVk5ws2BxX8sHKaKq_Pbx");
 }
 start();
 //HOMEPAGE API//////////////////////////////////////////////////////////////////////////////////

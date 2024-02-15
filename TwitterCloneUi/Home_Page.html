@@ -37,7 +37,7 @@
             </li>
             <li>
                 <img src="./assets/Icons/logout.png" class="nav-image" alt="Logout">
-                <a href="#logout">Logout</a>
+                <span onclick="handleLogOut()">Logout</a>
             </li>
         </ul>
     </nav>
@@ -80,7 +80,7 @@
                 <img src="./assets/Icons/white-circle.png" alt="dp holder" >
             </div>
             <div class="profile-name">
-                <h2>Profile Name</h2>
+                <h2 id="changeName">Profile Name</h2>
             </div>
             <div class="container">
                 <button class="button">Posts</button>
@@ -188,6 +188,11 @@
 </main>
 
 <script src="Home_Page.js"></script> 
+<script>
+    function handleLogOut() {
+        window.location.href = "index.html";
+    }
+</script>
 
 </body>
 </html>
