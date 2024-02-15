@@ -14,7 +14,7 @@
 <body>
 
 <main>
-    <nav>
+    <nav class="navigation-bar">
         <ul>
             <li>
                 <img src="./assets/Icons/logo.png" class="nav-image logo" alt="Logo">
@@ -82,6 +82,10 @@
             <div class="profile-name">
                 <h2 id="changeName">Profile Name</h2>
             </div>
+            <div class="follow">
+                <button class="button">Following</button>
+                <button class="button">Followers</button>
+            </div>
             <div class="container">
                 <button class="button">Posts</button>
                 <button class="button">Likes</button>
@@ -99,17 +103,17 @@
         
         <section id="notifications" class="notification-section">
             <h2 class="notification-title">Notifications</h2>
-            <section class="notification-bar">
-                <div class="notification-options">
-                    <div class="notification-option active" data-option="all">All</div>
-                    <div class="notification-option" data-option="verified">Verified</div>
-                    <div class="notification-option" data-option="mentions">Mentions</div>
-                </div>
-            </section>
+            <div class='notifs'>
+                Drake followed you
+            </div>
+            <div class='notifs'>
+                Drake followed you
+            </div>
+
         </section>
 
         <section id="settings" class="hidden">
-            <h2 class="section-title">Settings</h2>
+            <h2 class="setting-title">Settings</h2>
             <div class="settings-content">
                 <div class="setting">
                     <span class="setting-label">Notifications:</span>
@@ -184,10 +188,38 @@
                 
         </div>
         
-
         <div class="trends">
             <h2>Trends for you</h2>
         </div>
+        <nav class="trending">
+            <ul>
+                <li>
+                    1 · Holidays · Trending
+                    <h3>Happy Valentines</h3>
+                </li>
+                <li>
+                    2 · Trending
+                    <h3>Drake</h3>
+                </li>
+                <li>
+                    3 · Trending
+                    <h3>DK GROOVIN OUT NOW</h3>
+                </li>
+                <li>
+                    4 · K-pop · Trending
+                    <h3>#DONGHYUK</h3>
+                </li>
+                <li>
+                    5 · K-pop · Trending
+                    <h3>#NAKSEO</h3>
+                </li>
+                <li>
+                    6 · Trending
+                    <h3>Keria</h3>
+                </li>
+            </ul>
+        </nav>
+         
     </aside>
 </main>
 
