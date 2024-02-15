@@ -182,8 +182,10 @@ section {
     padding-left: 10px;
 }
 
-.twt a {
+.twt button {
     position: absolute;
+    border: none;
+    background: none;
 }
 
 .post-footer img {

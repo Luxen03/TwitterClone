@@ -130,9 +130,9 @@ let username = "";
 let token = 0;
 document.getElementById("prefab").style.display = "none";
 
-function AddNewPost(username, content, likes, replies) {
+function AddNewPost(username, content, likes, replies, postID) {
     let post = document.getElementById("prefab").cloneNode(true);
-    post.setAttribute("id", "newPost");
+    post.setAttribute("id", postID);
     post.style.display = "block";
     document.getElementById("home").appendChild(post);
     post.children[0].children[1].innerHTML = username;
@@ -195,11 +195,12 @@ async function getPosts() {
         }
     }).then(res => res.json());
     console.log(data);
-    for (post of data) AddNewPost(post.postedBy, post.content, post.likes.length, 0);
+    for (post of data) AddNewPost(post.postedBy, post.content, post.likes.length, 0, post.postId);
 }
 //TEMPORARY ID FOR LIKE
-async function likePost(_id) {
-    let data = await fetch("http://localhost:3000/api/v1/posts/" + _id, {
+async function likePost(_post) {
+    console.log(_post.parentNode.parentNode.getAttribute('id'));
+    let data = await fetch("http://localhost:3000/api/v1/posts/" + _post.parentNode.parentNode.getAttribute('id'), {
         method: "PATCH",
         headers: {
             'Authorization': 'Bearer ' + token,
@@ -208,7 +209,9 @@ async function likePost(_id) {
         body: JSON.stringify({
             action: "like"
         })
-    })
+    });
+    location.reload();
+
 }
 //temporary actions
 async function start() {
