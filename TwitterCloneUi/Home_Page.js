@@ -148,10 +148,16 @@ let token = 0;
 document.getElementById("prefab").style.display = "none";
 
 function AddNewPost(username, content, likes, replies, postID) {
+
+    var postElem = document.querySelector('.post');
+    var homePage = document.getElementById("home");
+
+
     let post = document.getElementById("prefab").cloneNode(true);
     post.setAttribute("id", postID);
     post.style.display = "block";
-    document.getElementById("home").appendChild(post);
+    // document.getElementById("home").appendChild(post);
+    postElem.insertAdjacentElement('afterend', post)
     post.children[0].children[1].innerHTML = username;
     post.children[1].innerHTML = content;
     post.children[2].children[0].children[1].innerHTML = likes;
