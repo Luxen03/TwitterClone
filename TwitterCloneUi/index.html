@@ -2,58 +2,108 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <title>N-stant Gum</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"/>
+    <script src="index_assets/script.js"></script>
+    <link rel="stylesheet" href="index_assets/stylesheet.css">
 </head>
 
 <body>
     <script>
-        async function helloWorld() {
-            const res = await fetch("/api")
-            const text = await res.text()
-            console.log(text);
-        }
 
-        async function register() {
+        async function register(_username, _password) {
             const res = await fetch("/api/v1/auth/register", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    username: "joblipat",
-                    password: "password"
+                    username: _username,
+                    password: _password
                 })
             })
             return await res.text()
         }
 
-        async function login() {
+        async function login(_username, _password) {
             const res = await fetch("/api/v1/auth/login", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    username: "joblipat",
-                    password: "password"
+                    username: _username,
+                    password: _password
                 })
             })
-            const token = await res.text()
-            console.log(token);
-
+            return await res.text()
         }
 
-        async function start() {
-            await helloWorld()
-            await register()
-            await login()
-        }
+        async function handleLogin() {
+            if (!isSignUpToggled) {
+                const tokenPromise = login(TF.username.value, TF.password.value);
+                tokenPromise.then((fulfilledValue) => {
+                    if (fulfilledValue != 'Unauthorized') {
+                        console.log("logged!")
+                    }
+                });
+                            
+            } else {
+                const tokenPromise = register(TF.username.value, TF.password.value);
+                tokenPromise.then((fulfilledValue) => {
+                    if (fulfilledValue == 'User created') {
+                        console.log("Registered!")
+                    }
 
-        start()
+                });
+            }
+
+        } 
+
     </script>
-    <p>Hello world. This is a sample page. Check the console to see if the front end is connected to the UI! </p>
+
+
+
+    <!-- start of UI -->
+    <img class="background" src="index_assets/bg.png">
+        <div class="body_container">
+            <form id="TF" class="container">
+                <div class="moving_panel m1">
+                    <div class="design d1"></div>
+                    <div class="design d2"></div>
+                    <span class="title_header">N-stant Gum</span>
+                    <span class="sub_header">Connecting People around the world with N-stant Gum.</span>
+                </div>
+                <div class="login_form">
+                    <div class="moving_panel m2" style="position: absolute; width: 100%; top: -100%">
+                        <div class="design d1"></div>
+                        <div class="design d2"></div>
+                        <span class="title_header">N-stant Gum</span>
+                        <span class="sub_header">Connecting People around the world with N-stant Gum.</span>
+                    </div>
+                    <span class="login_text">Log-in</span>
+                    <div class="text_field_form">
+                        <div class="input_design username">
+                            <input name="username" class="input_field" required="required">
+                            <span>Username</span>
+                        </div>
+                        <div class="input_design password">
+                            <input name="password" type="password" class="input_field" required="required">
+                            <span>Password</span>
+                        </div>
+                        <button type="button" onclick="handleLogin()" class="button_field">LOGIN</button>
+                    </div>
+                    
+                    
+                    <a href="forgot_password.html" target="_blank" class="subtext forgot">Forgot Password?</span>
+                    <a class="subtext sign_up">No account? <span>Sign Up<span></span>
+                </div>
+            </form>
+        </div>
+
+
+
 </body>
 
 </html>
