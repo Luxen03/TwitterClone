@@ -254,18 +254,9 @@ async function getPosts() {
 }
 //TEMPORARY ID FOR LIKE
 async function likePost(_post) {
+
     postID_ = _post.parentNode.parentNode.getAttribute('id');
     console.log(postID_);
-    let data = await fetch("http://localhost:3000/api/v1/posts/" + postID_, {
-        method: "PATCH",
-        headers: {
-            'Authorization': 'Bearer ' + tokenG,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            action: "like"
-        })
-    });
 
     let getData = await fetch(`http://localhost:3000/api/v1/posts/`, {
         method: "GET",
@@ -274,16 +265,38 @@ async function likePost(_post) {
             'Content-Type': 'application/json'
         }
     }).then(res => res.json());
-    
-    
+
+    var action;
     for (const item of getData) {
+        if (item.postId == postID_) {
+            action = item.likes.includes(curUser) ? 'unlike' : 'like';
+        }
+    }
+
+    let data = await fetch("http://localhost:3000/api/v1/posts/" + postID_, {
+        method: "PATCH",
+        headers: {
+            'Authorization': 'Bearer ' + tokenG,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            action: `${action}`
+        })
+    });
+
+    let getDataUpdated = await fetch(`http://localhost:3000/api/v1/posts/`, {
+        method: "GET",
+        headers: {
+            'Authorization': 'Bearer ' + tokenG,
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
+
+    for (const item of getDataUpdated) {
         if (item.postId == postID_) {
             _post.querySelector('p').textContent = item.likes.length;
         }
     }
-
-
-    
     // location.reload();
 }
 //temporary actions
