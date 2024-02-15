@@ -300,51 +300,41 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 10%;
-    left: 50%; 
-    transform: translateX(-50%); 
 }
 
 .dp-holder img {
-    width: 45%;
+    width: 20%;
+}
+
+.profile-name, .follow, .container {
+    margin-top: 20px;
 }
 
 .profile-name {
     display: flex;
     font-family: 'Actor', sans-serif;
+    justify-content: center;
     font-size: 15px;
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .follow {
-    position: absolute;
-    top: 42%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
     display: flex;
-    justify-content: space-around;
+    justify-content: center; 
     align-items: center;
     font-size: 15px;
-    width: 250px; 
-    height: 50px; 
+    margin-top: 20px; 
 }
 
+.follow button {
+    margin: 0 40px; 
+}
+
+
 .container {
-    position: absolute;
-    top: 50%; /* Place the container at 50% from the top */
-    left: 50%; /* Place the container at 50% from the left */
-    transform: translate(-50%, -50%); /* Use translate to center the container */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 600px; /* Change this value to adjust the width */
-    height: 50px; /* Change this value to adjust the height */
-    background-color: transparent;
-  }
+}
   
 .button {
     font-size: x-large;
