@@ -564,5 +564,35 @@ input:checked + .slider:before {
     color: #fff; 
 }
 
+.suggested {
+    display: flex;
+    flex-direction: column;
+}
+
+.userContainer {
+    /* backdrop-filter: blur(25px); */
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img_user {
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.usernameField {
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.followUser {
+    margin-right: 20px;
+}
+
 
 

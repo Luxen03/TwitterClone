@@ -2,10 +2,15 @@ var curUser = localStorage.getItem("curUser");
 var tokenG = localStorage.getItem("tokenID");
 document.addEventListener('DOMContentLoaded', function() {
     var profileName = document.getElementById('changeName');
-    // console.log(curUser);
     console.log(curUser);
     profileName.innerHTML = curUser;
 });
+
+// async function getAllUsers() {
+//     let data = await fetch("http://localhost:3000/api/v1/users")
+//     .then(res => res.text())
+//     .then(data => console.log(data));
+// }
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -169,6 +174,73 @@ async function makePost() {
     AddNewPost(curUser, _content, 0, 0);
 }
 
+async function getAllUsers() {
+    let data = await fetch("http://localhost:3000/api/v1/users/", {
+        method: "GET",
+        headers: {
+            'Authorization': 'Bearer ' + tokenG,
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
+    // return data;
+    // console.log(data[0]);
+
+    let ff = await checkFollowing();
+
+    for (var username in data) {
+        if (data[username] != curUser) {
+            let isFollowed =  ff.includes(data[username])? "Unfollow" : "Follow"
+            var toFollow = document.querySelector('.suggested');
+            toFollow.innerHTML += `<div class='userContainer'>
+            <div class='img_user'>
+                <img src='./assets/Icons/blank_profile_icon.png' class='post-pfp'>
+                <span class='usernameField'>${data[username]}</span>
+            </div>
+            <span class='followUser' onclick='ffUser("${data[username]}")'>${isFollowed}</span>
+            </div>`;
+        }
+    }
+}
+
+async function checkFollowing() {
+    let followingPeeps = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/`, {
+        method: "GET",
+        headers: {
+            'Authorization': 'Bearer ' + tokenG,
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
+    console.log('following: ', followingPeeps);
+    return followingPeeps;
+}
+
+async function ffUser(userToFollow) {
+    let ff = await checkFollowing();
+
+    if (ff.includes(userToFollow)) {
+        let data = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/${userToFollow}`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': 'Bearer ' + tokenG,
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log("Unfollowed");
+        location.reload();
+    } else {
+        let data = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/${userToFollow}`, {
+            method: "POST",
+            headers: {
+                'Authorization': 'Bearer ' + tokenG,
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log("followed");
+        location.reload();
+    }
+
+}
+
 async function getPosts() {
     let data = await fetch("http://localhost:3000/api/v1/posts", {
         method: "GET",
@@ -194,11 +266,11 @@ async function likePost(_post) {
         })
     });
     location.reload();
-
 }
 //temporary actions
 async function start() {
     await getPosts();
+    await getAllUsers();
 }
 start();
 //HOMEPAGE API//////////////////////////////////////////////////////////////////////////////////
