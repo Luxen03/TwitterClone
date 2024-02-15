@@ -6,12 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     profileName.innerHTML = curUser;
 });
 
-// async function getAllUsers() {
-//     let data = await fetch("http://localhost:3000/api/v1/users")
-//     .then(res => res.text())
-//     .then(data => console.log(data));
-// }
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -162,6 +156,8 @@ function AddNewPost(username, content, likes, replies, postID) {
     post.children[1].innerHTML = content;
     post.children[2].children[0].children[1].innerHTML = likes;
     post.children[2].children[1].children[1].innerHTML = replies;
+
+    // location.reload();
 }
 
 async function makePost() {
@@ -177,7 +173,10 @@ async function makePost() {
             content: _content
         })
     });
+
+    // console.log("posts:", data);
     AddNewPost(curUser, _content, 0, 0);
+    location.reload();
 }
 
 async function getAllUsers() {
@@ -255,7 +254,10 @@ async function getPosts() {
             'Content-Type': 'application/json'
         }
     }).then(res => res.json());
-    console.log(data);
+    // console.log('getPosts: ', data);
+    data.sort((a, b) => new Date(a.dateTimePosted) - new Date(b.dateTimePosted)); //from  latest to oldest.
+
+    console.log('getPosts: ', data);
     for (post of data) AddNewPost(post.postedBy, post.content, post.likes.length, 0, post.postId);
 }
 //TEMPORARY ID FOR LIKE
