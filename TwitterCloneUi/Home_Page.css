@@ -183,7 +183,6 @@ section {
 }
 
 .twt button {
-    position: absolute;
     border: none;
     background: none;
 }
@@ -295,7 +294,7 @@ section {
     background-color: transparent;
   }
   
-  .button {
+.button {
     font-size: x-large;
     border: none;
     background-color: inherit;
@@ -557,6 +556,9 @@ input:checked + .slider:before {
     flex: 1;
 }
 
+#home {
+    overflow: scroll;
+}
 
 .dark-mode .feed,
 .dark-mode .sidebar {

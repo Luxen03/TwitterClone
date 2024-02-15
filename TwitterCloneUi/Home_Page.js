@@ -254,8 +254,9 @@ async function getPosts() {
 }
 //TEMPORARY ID FOR LIKE
 async function likePost(_post) {
-    console.log(_post.parentNode.parentNode.getAttribute('id'));
-    let data = await fetch("http://localhost:3000/api/v1/posts/" + _post.parentNode.parentNode.getAttribute('id'), {
+    postID_ = _post.parentNode.parentNode.getAttribute('id');
+    console.log(postID_);
+    let data = await fetch("http://localhost:3000/api/v1/posts/" + postID_, {
         method: "PATCH",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -265,7 +266,25 @@ async function likePost(_post) {
             action: "like"
         })
     });
-    location.reload();
+
+    let getData = await fetch(`http://localhost:3000/api/v1/posts/`, {
+        method: "GET",
+        headers: {
+            'Authorization': 'Bearer ' + tokenG,
+            'Content-Type': 'application/json'
+        }
+    }).then(res => res.json());
+    
+    
+    for (const item of getData) {
+        if (item.postId == postID_) {
+            _post.querySelector('p').textContent = item.likes.length;
+        }
+    }
+
+
+    
+    // location.reload();
 }
 //temporary actions
 async function start() {
