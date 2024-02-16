@@ -356,7 +356,7 @@ section {
 }
   
 .button {
-    font-size: x-large;
+    font-size: 15px;
     border: none;
     background-color: inherit;
     cursor: pointer;
