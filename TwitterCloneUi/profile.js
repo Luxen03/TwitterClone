@@ -16,7 +16,7 @@ function checkSelfProfile() {
 }
 
 async function getAllUsers() {
-    let data = await fetch("http://localhost:3000/api/v1/users/", {
+    let data = await fetch("/api/v1/users/", {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -44,7 +44,7 @@ async function getAllUsers() {
 }
 
 async function checkFollowing() {
-    let followingPeeps = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/`, {
+    let followingPeeps = await fetch(`/api/v1/users/${curUser}/following/`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -59,7 +59,7 @@ async function ffUser(userToFollow) {
     let ff = await checkFollowing();
 
     if (ff.includes(userToFollow)) {
-        let data = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/${userToFollow}`, {
+        let data = await fetch(`/api/v1/users/${curUser}/following/${userToFollow}`, {
             method: "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + tokenG,
@@ -69,7 +69,7 @@ async function ffUser(userToFollow) {
         console.log("Unfollowed");
         location.reload();
     } else {
-        let data = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/${userToFollow}`, {
+        let data = await fetch(`/api/v1/users/${curUser}/following/${userToFollow}`, {
             method: "POST",
             headers: {
                 'Authorization': 'Bearer ' + tokenG,
@@ -104,7 +104,7 @@ function AddNewPost(dateTimePosted, username, content, likes, replies, postID) {
 
 async function getPosts() {
     const username = new URLSearchParams(window.location.search).get("username")
-    let data = await fetch(`http://localhost:3000/api/v1/posts?username=${username}`, {
+    let data = await fetch(`/api/v1/posts?username=${username}`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -124,7 +124,7 @@ async function likePost(_post) {
     console.log(postID_);
 
     const username = new URLSearchParams(window.location.search).get("username")
-    let gg = await fetch(`http://localhost:3000/api/v1/posts?username=${username}`, {
+    let gg = await fetch(`/api/v1/posts?username=${username}`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -140,7 +140,7 @@ async function likePost(_post) {
         }
     }
 
-    let data = await fetch("http://localhost:3000/api/v1/posts/" + postID_, {
+    let data = await fetch("/api/v1/posts/" + postID_, {
         method: "PATCH",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -151,7 +151,7 @@ async function likePost(_post) {
         })
     });
 
-    let getDataUpdated = await fetch(`http://localhost:3000/api/v1/posts?username=${username}`, {
+    let getDataUpdated = await fetch(`/api/v1/posts?username=${username}`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,

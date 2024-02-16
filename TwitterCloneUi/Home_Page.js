@@ -167,7 +167,7 @@ function AddNewPost(datePosted, username, content, likes, replies, postID) {
 async function makePost() {
     let _content = document.getElementById("Text-Box").value;
     console.log(_content);
-    let data = await fetch("http://localhost:3000/api/v1/posts", {
+    let data = await fetch("/api/v1/posts", {
         method: "POST",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -184,7 +184,7 @@ async function makePost() {
 }
 
 async function getAllUsers() {
-    let data = await fetch("http://localhost:3000/api/v1/users/", {
+    let data = await fetch("/api/v1/users/", {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -212,7 +212,7 @@ async function getAllUsers() {
 }
 
 async function checkFollowing() {
-    let followingPeeps = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/`, {
+    let followingPeeps = await fetch(`/api/v1/users/${curUser}/following/`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -227,7 +227,7 @@ async function ffUser(userToFollow) {
     let ff = await checkFollowing();
 
     if (ff.includes(userToFollow)) {
-        let data = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/${userToFollow}`, {
+        let data = await fetch(`/api/v1/users/${curUser}/following/${userToFollow}`, {
             method: "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + tokenG,
@@ -237,7 +237,7 @@ async function ffUser(userToFollow) {
         console.log("Unfollowed");
         location.reload();
     } else {
-        let data = await fetch(`http://localhost:3000/api/v1/users/${curUser}/following/${userToFollow}`, {
+        let data = await fetch(`/api/v1/users/${curUser}/following/${userToFollow}`, {
             method: "POST",
             headers: {
                 'Authorization': 'Bearer ' + tokenG,
@@ -251,7 +251,7 @@ async function ffUser(userToFollow) {
 }
 
 async function getPosts() {
-    let data = await fetch("http://localhost:3000/api/v1/posts", {
+    let data = await fetch("/api/v1/posts", {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -270,7 +270,7 @@ async function likePost(_post) {
     postID_ = _post.parentNode.parentNode.getAttribute('id');
     console.log(postID_);
 
-    let getData = await fetch(`http://localhost:3000/api/v1/posts/`, {
+    let getData = await fetch(`/api/v1/posts/`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -285,7 +285,7 @@ async function likePost(_post) {
         }
     }
 
-    let data = await fetch("http://localhost:3000/api/v1/posts/" + postID_, {
+    let data = await fetch("/api/v1/posts/" + postID_, {
         method: "PATCH",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
@@ -296,7 +296,7 @@ async function likePost(_post) {
         })
     });
 
-    let getDataUpdated = await fetch(`http://localhost:3000/api/v1/posts/`, {
+    let getDataUpdated = await fetch(`/api/v1/posts/`, {
         method: "GET",
         headers: {
             'Authorization': 'Bearer ' + tokenG,
