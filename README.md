@@ -26,7 +26,7 @@ Our content creation approach was iterative and collaborative, beginning with ou
 Our website emphasizes creativity across various elements, starting with visually stunning design featuring custom graphics, vibrant color palettes, and thoughtful typography. Dynamic layout designs enhance interactivity and immersion, including interactive features like liking posts and intuitive navigation menus. Prioritizing user experience, we ensure clear content presentation and intuitive navigation flows, complemented by personalized features for individual users. Content presentation utilizes multimedia and interactive elements to engage visitors, while innovative features and design concepts push the boundaries of web design, delivering a memorable experience.
 
 ## What did you use to deploy your website?
-Netlify
+We use Netlify to deploy our website.
 
 ## How did you divide the tasks between the team, and what is the responsibility of each one?
 The team divided tasks based on expertise and project needs. Three members focused on UI design layout, responsible for crafting visual aesthetics, the user experience, and creating mockups using design tools. Two members were assigned to API implementation, responsible for creating functions to enable website functionality. Communication and collaboration ensured alignment between UI design and API implementation for a cohesive final product.
