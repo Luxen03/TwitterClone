@@ -1,94 +1,42 @@
 # Twitter Clone
 
 ## Figma Concept
+
 ![sign-up/log-in_page](./TwitterCloneUi/assets/figma/log-in_sign-up_page.png)
 ![main_page](./TwitterCloneUi/assets/figma/profile_home_page.png)
 
-## Repository Owner
+## Final Design
+![final](./TwitterCloneUi/assets/figma/login-signup.png)
 
-- Each group must assign one repository owner
-- The repository owner must fork this repository. Only the repository owner should fork the repository
-  - This could be done by clicking the "Fork" button on the top right.
-- The repository owner must invite their goupmates as collaborators in their fork
-  - This could be done by going to Settings>Collaborators>Add people
-- The group must use the fork to collaborate on their project. They must commit and push their code in their forks.
-- The group must submit the link of the repository of the repository owner in the submission bin
+## Where could the concepts discussed in class be seen in your website?
+Our website's structure adheres to the basic HTML document format with files like homepage.html and profile.html. Semantic HTML elements such as header, nav, main, section, aside, and footer are used to organize content meaningfully. Navigation links (<a> tags) facilitate page transitions within the website.
 
-## Getting Started
+Forms containing input elements like text fields and buttons enable functionalities such as searching and making posts. CSS selectors, including element, class, and ID selectors, are utilized for styling, alongside properties like margin, padding, and border for layout control.
 
-Follow these steps to set up and run the Twitter Clone project:
+Flexbox is employed for flexible and responsive layout design, particularly evident in navigation and sidebar layouts. Media queries ensure responsiveness across different screen sizes. JavaScript event handling, such as onclick and onsubmit, triggers functions for interactivity like making posts and logging out.
 
-1. **Install Node.js**:
-   Make sure you have Node.js installed on your system. If not, download and install it from the official website.
+Dynamic DOM manipulation updates content based on user actions or changing states, such as displaying user-specific profile information. JavaScript adds interactivity features like liking posts, user authentication, and toggling element visibility, enhancing user engagement.
 
-2. **Fork and Clone the Repository**:
+## What was your inspiration for the design of the website?
+Our concept for the website design was to merge Instagram and Twitter. We wanted to follow the simplicity and use of Instagram's UI. We were inspired by the growing trend of social media users desiring more streamlined experiences in which they can easily share memories and keep updated all in one spot.
+## What was your approach in creating the content of the website?
+Our content creation approach was iterative and collaborative, beginning with outlining key features based on user needs. Brainstorming and wireframing in Figma established the website's structure. After establishing the layout with HTML/CSS, we focused on crafting engaging content, including visuals and text-based elements like captions and user profiles.
 
-   - Clone your forked repository to your local machine using Git.
+## How is your website creative?
+Our website emphasizes creativity across various elements, starting with visually stunning design featuring custom graphics, vibrant color palettes, and thoughtful typography. Dynamic layout designs enhance interactivity and immersion, including interactive features like liking posts and intuitive navigation menus. Prioritizing user experience, we ensure clear content presentation and intuitive navigation flows, complemented by personalized features for individual users. Content presentation utilizes multimedia and interactive elements to engage visitors, while innovative features and design concepts push the boundaries of web design, delivering a memorable experience.
 
-3. **Install Dependencies**:
+## What did you use to deploy your website?
+We use Netlify to deploy our website.
 
-   - Open a terminal and navigate to the cloned repository.
-   - Install the API dependencies by running the command:
-     ```
-     npm run init-api
-     ```
-   - Install the UI dependencies by running the command:
-     ```
-     npm run init-ui
-     ```
+## How did you divide the tasks between the team, and what is the responsibility of each one?
+The team divided tasks based on expertise and project needs. Three members focused on UI design layout, responsible for crafting visual aesthetics, the user experience, and creating mockups using design tools. Two members were assigned to API implementation, responsible for creating functions to enable website functionality. Communication and collaboration ensured alignment between UI design and API implementation for a cohesive final product.
 
-4. **Run the API**:
+## How did you prevent your changes in code from conflicting with each other?
+To prevent conflicts in our codebase, we emphasized clear communication among team members, ensuring everyone understood their tasks and responsibilities. Establishing a structured workflow, we prioritized regular commits and pushes to our GitHub repository, facilitating seamless tracking of individual contributions and minimizing the risk of conflicts. Thorough code reviews and testing were conducted to catch discrepancies early on and resolve them collaboratively. Through effective communication and disciplined version control practices, we successfully managed to maintain a cohesive codebase and prevent conflicts.
 
-   - Start the API server by running:
-     ```
-     npm run start-api
-     ```
-   - Visit `http://localhost:3000/api` in your web browser to check if the API is up and running.
-   - Visit `http://localhost:3000/api/docs` in your web browser to see the documentation of the API.
+## How you could improve your website in the future
+In the future, we aim to enhance our website by introducing advanced features like real-time notifications and a more robust search engine, fostering increased user engagement. Optimizing for diverse devices and screen sizes will ensure accessibility and seamless experiences. Regularly seeking user feedback and conducting usability tests will provide valuable insights for continuous improvement. By staying responsive to user needs and technological advancements, we'll maintain relevance and deliver exceptional user experiences over time.
 
-5. **Run the UI**:
 
-   - Open a new terminal window (keep the API terminal running).
-   - Start the UI development server with:
-     ```
-     npm run start-ui
-     ```
-   - Visit `http://127.0.0.1:8080` in your web browser to see if the UI is working.
 
-6. **Start Developing**:
-   - Begin working on the UI in the `TwitterCloneUi` folder.
-   - Add your HTML, CSS, and JS files to build the Twitter Clone interface.
 
-Remember: **Do not modify the `TwitterCloneApi` folder**; it contains essential API code.
-
-## Deployment
-
-To deploy this application you need to to use netlify. See the [documentation](https://docs.netlify.com/) to see how deployments are done in Netlify.
-
-The netlify.toml file contains nearly all the necessary values needed for deploying the application. There are no additional values needed to be set up except the JWT_KEY environment variable
-
-## Step by step Deployment Guide
-
-The deployment process for netlify should be straight forward, but here's a step by step guide in case you need it.
-
-1. Make sure that your forked is synced
-2. Visit [the netlify website](https://netlify.app/) and click on "Deploy to Netlify"
-3. Create an account and sign up with your github profile
-4. Click on the "Add new site" button and select "Import and Exisitng Project"
-5. Click on "Deploy with Github". Netlify might ask for Authentication in which case you would need to allow Netlify.
-6. Select your repository from the list.
-7. Set the site name to your desired name.
-8. The `Build command`, `Publish directory`, and `Functions directory` should be prefilled with the necessary information. If not, make sure to sync your fork and check again.
-9. Click on "Deploy" and wait a couple of minutes for netlify to deploy your application. Once netlify is finished, a green tag with the text "Published" should appear in "Production Deploys"
-10. Et voila, you have deployed your application 🎉 Now you need to step up the JWT_KEY
-
-### Setting up the JWT_KEY
-
-The JWT_KEY is used to generate the tokens and make sure that the tokens generated by the system is indeed generated by the system itself. Otherwise, attackers might be able to generate tokens themselves and compromise the system. This is why the key needs to be generated and entered manually. They must not be known to anyone but the developers.
-
-1. To setup the JWT_KEY environment variable, you would first need to generate a secret key. You may refer to [this](https://dev.to/tkirwa/generate-a-random-jwt-secret-key-39j4) tutorial for generating a secret key
-   - Once generated, your private key may look something like this `ddcb75b4f402f240234eec4bf175fa9e8c15aea5...`
-2. Once you have created a secret key, you need to add your private key as an environment variable. The name of the key must be `JWT_KEY` and the value is your private key.
-   - You may refer to [this](https://docs.netlify.com/environment-variables/get-started/#site-environment-variables) documentation for a tutorial on how to set environment variables in netlify
-
-Happy coding! 🚀🐦
