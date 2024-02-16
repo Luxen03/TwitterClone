@@ -10,7 +10,6 @@ function checkSelfProfile() {
     window.location.href=`profile.html?username=${curUser}`;
 }
 
-
 // document.addEventListener('DOMContentLoaded', function() {
 //     const navLinks = document.querySelectorAll('nav ul li a');
 //     navLinks.forEach(function(link) {
@@ -159,7 +158,7 @@ function AddNewPost(username, content, likes, replies, postID) {
     post.children[0].children[1].innerHTML = username;
     post.children[1].innerHTML = content;
     post.children[2].children[0].children[1].innerHTML = likes;
-    post.children[2].children[1].children[1].innerHTML = replies;
+    // post.children[2].children[1].children[1].innerHTML = replies;
 
     // location.reload();
 }
@@ -316,6 +315,17 @@ async function start() {
     await getPosts();
     await getAllUsers();
 }
+
+function enforceMaxLength() {
+    var textarea = document.getElementById("Text-Box");
+    var charCount = document.querySelector(".charCount");
+    var textLength = textarea.value.length;
+    
+    var percent = 360 * ((160 - textLength) / 160);
+    charCount.style.backgroundImage = `conic-gradient(var(--m_col3) ${percent}deg, var(--m_col2) 0deg)`
+}
+
+    // charCount.textContent = (160 - textarea.value.length);
 
 
 //exports

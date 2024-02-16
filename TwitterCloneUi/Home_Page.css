@@ -178,28 +178,64 @@ section {
     margin: 20px;
     text-align: center;
     border-radius: 10px;
+    overflow: hidden;
 }
 
-.post input[type="text"] {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 160px); 
-    height: auto;
-    border: 1px solid #ffffff;
-    font-size: 25px;
+
+.text-box {
+    height: 50%;
+    width: 80%;
     outline: none;
+    border: none;
+    resize: none;
+    background-color: transparent;
+    position: absolute;
+    top: 20%;
+    left: 5%; 
+    font-size: 20px;
 }
+
+.containerCircle {
+    display: flex;
+    width: fit-content;
+
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.charCount {
+    /* position: absolute;
+    bottom: 10px;
+    right: 120px; */
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--m_col3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: conic-gradient(var(--m_col3) 360deg, var(--m_col2) 0deg);
+
+}
+
+.inner_circle {
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    border-radius: 50%;
+}
+
 
 
 .post button {
-    position: absolute;
+    /* position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: 10px; */
     width: 100px;
-    height: 35px;
-    border: solid #ffffff;
+    height: 30px;
     background-color: #3C405B;
     border-radius: 15px;
     color: white;
@@ -245,28 +281,20 @@ section {
 }
 
 .post-content {
-    padding-top: 1px;
-    padding-left: 60px;
-    align-items: center;
+
+    box-sizing: border-box;
+    /* background-color: red; */
+    margin: 10px;
+    width: 70%;
+    word-wrap: break-word;
+    
+
 }
 
 .like-btn {
     align-items: center;
-    color: #212429;
     display: flex;
     flex-direction: row;
-    width: 15px;
-    height: auto;
-    padding-right: 120px;
-    cursor:pointer;
-}
-
-.reply-btn {
-    align-items: center;
-    color: #212429;
-    display: flex;
-    flex-direction: row;
-    width: 15px;
     height: auto;
     cursor:pointer;
 }
@@ -285,7 +313,7 @@ section {
 .post button:active {
     background-color: #1F1F3D; 
 }
- 
+
 #profile .dp-holder {
     position: relative;
     top: -130px; /* Adjust this value as needed to overlap the cover photo */
@@ -617,6 +645,7 @@ input:checked + .slider:before {
     .sidebar {
         width: 200px; /* Adjust width for smaller screens */
         padding: 10px; /* Adjust padding for smaller screens */
+        display: none;
     }
     .suggested {
         flex-direction: column; /* Stack items vertically on smaller screens */
@@ -640,10 +669,7 @@ input:checked + .slider:before {
     .trending ul li {
         font-size: 12px;
     }
-    .post button {
-        width: 50%; /* Adjust width for smaller screens */
-        max-width: 120px; /* Adjust maximum width for smaller screens */
-    }
+
     #profile .dp-holder {
         top: -100px; /* Adjust as needed for smaller screens */
     }

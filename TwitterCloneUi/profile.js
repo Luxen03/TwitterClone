@@ -96,7 +96,7 @@ function AddNewPost(username, content, likes, replies, postID) {
     post.children[0].children[1].innerHTML = username;
     post.children[1].innerHTML = content;
     post.children[2].children[0].children[1].innerHTML = likes;
-    post.children[2].children[1].children[1].innerHTML = replies;
+    // post.children[2].children[1].children[1].innerHTML = replies;
 
     // location.reload();
 }
