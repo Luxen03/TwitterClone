@@ -51,12 +51,26 @@ section {
     overflow-y: auto;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.225);
     cursor:pointer;
-    
+    width: 260px;
+    transition: width 0.5s ease-in-out;
 }
 
-.navigation-bar ul li:first-child {
-    color: #CAB06A;
+.logoCont {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.nav-item1 {
+    /* background-color: red; */
+    width: 300px;
+    display: flex;
+}
+
+.navigation-bar .textLogo {
+    color: #CAB06A;
     align-items: center; 
     font-size: 20px; 
     font-weight: bold;
@@ -67,6 +81,12 @@ section {
     height: auto;
     margin-right: 10px;
     vertical-align: middle; 
+}
+
+.nav-link {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
 }
 
 .navigation-bar .nav-image.logo {
@@ -87,10 +107,7 @@ section {
     font-size: 15px;
 }
 
-.navigation-bar ul li:first-child {
-    display: flex;
-    align-items: center; 
-}
+
 
 .navigation-bar ul li a {
     color: #fff;
@@ -658,8 +675,13 @@ input:checked + .slider:before {
     }
 
     .navigation-bar {
-        flex-direction: column; /* Stack items vertically */
-        padding: 10px; /* Adjust padding for smaller screens */
+        
+        width: 100px;
+    }
+    
+    .navigation-bar span,
+    .navigation-bar p {
+        display: none;
     }
 
     h1 {
