@@ -82,7 +82,7 @@ async function ffUser(userToFollow) {
 
 }
 
-function AddNewPost(username, content, likes, replies, postID) {
+function AddNewPost(dateTimePosted, username, content, likes, replies, postID) {
 
     var divider = document.querySelector('.divider');
     var profilePage = document.getElementById("profile");
@@ -93,6 +93,7 @@ function AddNewPost(username, content, likes, replies, postID) {
     post.style.display = "block";
     // document.getElementById("home").appendChild(post);
     divider.insertAdjacentElement('afterend', post)
+    post.querySelector(".post-date").textContent = dateTimePosted;
     post.children[0].children[1].innerHTML = username;
     post.children[1].innerHTML = content;
     post.children[2].children[0].children[1].innerHTML = likes;
@@ -114,7 +115,7 @@ async function getPosts() {
     data.sort((a, b) => new Date(a.dateTimePosted) - new Date(b.dateTimePosted)); //from  latest to oldest.
 
     console.log('getPosts: ', data);
-    for (post of data) AddNewPost(post.postedBy, post.content, post.likes.length, 0, post.postId);
+    for (post of data) AddNewPost(post.dateTimePosted, post.postedBy, post.content, post.likes.length, 0, post.postId);
 }
 
 async function likePost(_post) {

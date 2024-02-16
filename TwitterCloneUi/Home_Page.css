@@ -251,6 +251,7 @@ section {
     padding-left: 20px;
     border-radius: 10px;
     margin: 20px;
+    overflow: hidden;
 }
 
 .post-header {
@@ -280,6 +281,12 @@ section {
     width: 50px;
 }
 
+.post-date {
+    margin-left: 20px;
+    color: grey;
+    font-size: 13px;
+}
+
 .post-content {
 
     box-sizing: border-box;
@@ -287,7 +294,6 @@ section {
     margin: 10px;
     width: 70%;
     word-wrap: break-word;
-    
 
 }
 

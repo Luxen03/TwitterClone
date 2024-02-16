@@ -144,7 +144,7 @@ let username = "";
 let token = 0;
 document.getElementById("prefab").style.display = "none";
 
-function AddNewPost(username, content, likes, replies, postID) {
+function AddNewPost(datePosted, username, content, likes, replies, postID) {
 
     var postElem = document.querySelector('.post');
     var homePage = document.getElementById("home");
@@ -155,6 +155,7 @@ function AddNewPost(username, content, likes, replies, postID) {
     post.style.display = "block";
     // document.getElementById("home").appendChild(post);
     postElem.insertAdjacentElement('afterend', post)
+    post.querySelector(".post-date").textContent = datePosted;
     post.children[0].children[1].innerHTML = username;
     post.children[1].innerHTML = content;
     post.children[2].children[0].children[1].innerHTML = likes;
@@ -176,9 +177,9 @@ async function makePost() {
             content: _content
         })
     });
-
-    // console.log("posts:", data);
-    AddNewPost(curUser, _content, 0, 0);
+    
+    // console.log("posts:", data.posted);
+    AddNewPost(data.dateTimePosted, curUser, _content, 0, 0);
     location.reload();
 }
 
@@ -261,7 +262,7 @@ async function getPosts() {
     data.sort((a, b) => new Date(a.dateTimePosted) - new Date(b.dateTimePosted)); //from  latest to oldest.
 
     console.log('getPosts: ', data);
-    for (post of data) AddNewPost(post.postedBy, post.content, post.likes.length, 0, post.postId);
+    for (post of data) AddNewPost(post.dateTimePosted, post.postedBy, post.content, post.likes.length, 0, post.postId);
 }
 //TEMPORARY ID FOR LIKE
 async function likePost(_post) {
@@ -320,7 +321,6 @@ function enforceMaxLength() {
     var textarea = document.getElementById("Text-Box");
     var charCount = document.querySelector(".charCount");
     var textLength = textarea.value.length;
-    
     var percent = 360 * ((160 - textLength) / 160);
     charCount.style.backgroundImage = `conic-gradient(var(--m_col3) ${percent}deg, var(--m_col2) 0deg)`
 }
