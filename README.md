@@ -1,8 +1,8 @@
 # Twitter Clone
 
 ## Figma Concept
-![sign-up/log-in_page](./assets/figma/log-in_sign-up_page.png)
-![main_page](./assets/figma/profile_home_page.png)
+![sign-up/log-in_page](./TwitterCloneUi/assets/figma/log-in_sign-up_page.png)
+![main_page](./TwitterCloneUi/assets/figma/profile_home_page.png)
 
 ## Repository Owner
 
