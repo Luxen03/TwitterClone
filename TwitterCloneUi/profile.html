@@ -44,7 +44,7 @@
 
     <section id="profile">
         <div class="cover-photo">
-            <img src="./assets/Icons/cover-photo.jpg" alt="Cover Photo" >
+            <img src="./index_assets/bg.png" alt="Cover Photo" >
         </div>
         <div class="dp-holder">
             <img src="./assets/Icons/white-circle.png" alt="dp holder" >
@@ -129,6 +129,8 @@
 function handleLogOut() {
     window.location.href = "index.html";
 }
+
+
 
 const username = new URLSearchParams(window.location.search).get("username")
 document.getElementById('changeName').textContent = username;
