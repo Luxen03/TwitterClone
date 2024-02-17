@@ -758,3 +758,12 @@ input:checked + .slider:before {
    
    /* height: max-content;  */
 }
+
+.heartLike {
+    transition: transform 0.1s ease-in;
+}
+
+.heartLike:hover {
+    /* transform: translateY(-25px); */
+    transform: scale(1.1);
+}

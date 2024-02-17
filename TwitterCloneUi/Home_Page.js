@@ -147,6 +147,11 @@ document.getElementById("prefab").style.display = "none";
 
 function AddNewPost(datePosted, username, content, likes, replies, postID) {
 
+    const dateObject = new Date(datePosted);
+
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    datePosted = dateObject.toLocaleDateString('en-US', options);
+
     var postElem = document.querySelector('.post');
     var homePage = document.getElementById("home");
 
