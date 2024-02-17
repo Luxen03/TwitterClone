@@ -184,9 +184,9 @@ async function makePost() {
     });
     
     console.log("posts:", data);
-    AddNewPost("2000-10-10", curUser, _content, 0, 0);
-    // location.reload();
-    getPosts();
+    // AddNewPost("2000-10-10", curUser, _content, 0, 0);
+    location.reload();
+    // getPosts();
 }
 
 async function getAllUsers() {
