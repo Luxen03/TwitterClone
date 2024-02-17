@@ -60,6 +60,11 @@
                     tokenPromise.then((fulfilledValue) => {
                         if (fulfilledValue == 'User created') {
                             alert("Account Successfully Registered!")
+                            window.location.href = "Home_Page.html";
+                            localStorage.setItem("curUser", TF.username.value);
+                            localStorage.setItem("tokenID", fulfilledValue); 
+                        } else {
+                            alert("Unsuccessfully Registered!")
                         }
 
                     });
