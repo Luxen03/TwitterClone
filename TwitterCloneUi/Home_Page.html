@@ -16,33 +16,7 @@
 
 <main>
     <nav class="navigation-bar">
-        
-        <!-- <ul>
-            <li>
-                <img src="./assets/Icons/logo.png" class="nav-image logo" alt="Logo">
-                <p>N-stant Gum</p>
-            </li>
-            <li><img src="./assets/Icons/profile_icon.png" class="nav-image" alt="Profile">
-                <a onclick="checkSelfProfile()">Profile</a>
-            </li>
-            <li>
-                <img src="./assets/Icons/home.png" class="nav-image" alt="Home">
-                <a href="Home_Page.html">Home</a>
-            </li>
-            <li>
-                <img src="./assets/Icons/notif.png" class="nav-image" alt="Notifications">
-                <a href="#notifications">Notifications</a>
-            </li>
-            <li>
-                <img src="./assets/Icons/settings.png" class="nav-image" alt="Settings">
-                <a href="#settings">Settings</a>
-            </li>
-            <li>
-                <img src="./assets/Icons/logout.png" class="nav-image" alt="Logout">
-                <a onclick="handleLogOut()">Logout</a>
-            </li>
-        </ul> -->
-
+    
         <ul>
             <li class="nav-item1">
                 <a href="#" class="logoCont">
@@ -85,7 +59,8 @@
 
         <section id="home">
             <div class="search-box">
-                <input type="text" placeholder="Search...">
+                <input type="text" class="input_search" placeholder="Search..." oninput="showSuggested()" onblur="hideSuggestions()" onfocus="showSuggested()" onkeydown="handleKeyDown(event)">
+                <ul class="suggestion-list"></ul>
             </div>
 
             <div class='post'>

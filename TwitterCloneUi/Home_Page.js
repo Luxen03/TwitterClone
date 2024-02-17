@@ -1,5 +1,6 @@
 var curUser = localStorage.getItem("curUser");
 var tokenG = localStorage.getItem("tokenID");
+var allUsersRegistered;
 // document.addEventListener('DOMContentLoaded', function() {
 //     var profileName = document.getElementById('changeName');
 //     console.log(curUser);
@@ -178,9 +179,10 @@ async function makePost() {
         })
     });
     
-    console.log("posts:", data.dateTimePosted);
-    AddNewPost(data.dateTimePosted.substring(0, 10), curUser, _content, 0, 0);
-    location.reload();
+    console.log("posts:", data);
+    AddNewPost("Date", curUser, _content, 0, 0);
+    // location.reload();
+    getPosts();
 }
 
 async function getAllUsers() {
@@ -192,8 +194,9 @@ async function getAllUsers() {
         }
     }).then(res => res.json());
     // return data;
-    // console.log(data[0]);
-
+    // console.log("users:", data);
+    allUsersRegistered = data;
+    console.log(allUsersRegistered);
     let ff = await checkFollowing();
 
     for (var username in data) {
@@ -312,9 +315,56 @@ async function likePost(_post) {
     // location.reload();
 }
 //temporary actions
+
+// function test() {
+//     console.log("testHere", allUsersRegistered);
+// }
+function showSuggested() {
+    const input = document.querySelector('.input_search').value.toLowerCase();
+    const suggestionList = document.querySelector('.suggestion-list');
+    suggestionList.innerHTML = '';
+    const filteredUsernames = allUsersRegistered.filter(username => username.toLowerCase().startsWith(input));
+    filteredUsernames.forEach(username => {
+        const li = document.createElement('li');
+        li.textContent = username;
+        // li.setAttribute("onclick", "goToProfile()");
+        li.addEventListener('click', () => {
+            window.location.href = `profile.html?username=${username}`;
+            suggestionList.style.display = 'none';
+        });
+        suggestionList.appendChild(li);
+    });
+    suggestionList.style.display = filteredUsernames.length > 0 ? 'block' : 'none';
+}
+
+function hideSuggestions() {
+    const suggestionList = document.querySelector('.suggestion-list');
+    setTimeout(function() {suggestionList.style.display = 'none'; }, 20); //giving ample amount of time before disappearing
+    
+}
+
+function handleKeyDown(event) {
+    var userTobeSearched = document.querySelector('.input_search').value
+
+    if (event.key === 'Enter') {
+        // Handle the Enter key press, e.g., submit the form or perform a search
+        if (allUsersRegistered.includes(userTobeSearched)) {
+            window.location.href = `profile.html?username=${userTobeSearched}`;
+        } else {
+            console.log(userTobeSearched, allUsersRegistered);
+            alert("User does not exist.");
+        }
+    }
+}
+
+function goToProfile() {
+    console.log("tesss");
+}
+
 async function start() {
     await getPosts();
     await getAllUsers();
+    // test();
 }
 
 function enforceMaxLength() {

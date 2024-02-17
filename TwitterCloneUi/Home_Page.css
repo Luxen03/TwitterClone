@@ -727,3 +727,34 @@ input:checked + .slider:before {
         width: 100px; /* Adjust width for even smaller screens */
     }
 }
+
+
+
+/* New Stuffs Here */
+.search-box {
+    position: relative;
+}
+
+.suggestion-list {
+    position: absolute;
+    width: calc(100% - 40px);
+    z-index: 3;
+}
+
+.suggestion-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    margin: 10px;
+    background-color: rgba(255, 126, 227, 0.2);
+    backdrop-filter: blur(25px);
+    text-align: center;
+    list-style: none;
+    border: 1px solid #BA639A;
+    border-radius: 50px;
+    height: 50px;
+   
+   /* height: max-content;  */
+}
