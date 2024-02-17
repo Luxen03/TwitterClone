@@ -115,7 +115,7 @@ async function getPosts() {
     data.sort((a, b) => new Date(a.dateTimePosted) - new Date(b.dateTimePosted)); //from  latest to oldest.
 
     console.log('getPosts: ', data);
-    for (post of data) AddNewPost(post.dateTimePosted, post.postedBy, post.content, post.likes.length, 0, post.postId);
+    for (post of data) AddNewPost(post.dateTimePosted.substring(0, 10), post.postedBy, post.content, post.likes.length, 0, post.postId);
 }
 
 async function likePost(_post) {
