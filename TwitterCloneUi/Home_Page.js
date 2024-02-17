@@ -344,7 +344,7 @@ function showSuggested() {
 
 function hideSuggestions() {
     const suggestionList = document.querySelector('.suggestion-list');
-    setTimeout(function() {suggestionList.style.display = 'none'; }, 20); //giving ample amount of time before disappearing
+    setTimeout(function() {suggestionList.style.display = 'none'; }, 200); //giving ample amount of time before disappearing
     
 }
 
