@@ -178,7 +178,7 @@ async function makePost() {
         })
     });
     
-    // console.log("posts:", data.posted);
+    console.log("posts:", data.dateTimePosted);
     AddNewPost(data.dateTimePosted.substring(0, 10), curUser, _content, 0, 0);
     location.reload();
 }
