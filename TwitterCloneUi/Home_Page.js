@@ -148,7 +148,6 @@ document.getElementById("prefab").style.display = "none";
 function AddNewPost(datePosted, username, content, likes, replies, postID) {
 
     const dateObject = new Date(datePosted);
-
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     datePosted = dateObject.toLocaleDateString('en-US', options);
 
@@ -185,7 +184,7 @@ async function makePost() {
     });
     
     console.log("posts:", data);
-    AddNewPost("Date", curUser, _content, 0, 0);
+    AddNewPost("2000-10-10", curUser, _content, 0, 0);
     // location.reload();
     getPosts();
 }
