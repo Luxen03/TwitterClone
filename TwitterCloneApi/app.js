@@ -8,9 +8,10 @@ import authRoutes from "./routes/AuthRoutes.js";
 import postsRoutes from "./routes/PostsRoutes.js";
 import usersRoutes from "./routes/UsersRoutes.js";
 import followersRoutes from "./routes/FollowersRoutes.js";
-import openApiSpecs from "./docs/openapi.json" assert { type: "json" };
+//import openApiSpecs from "./docs/openapi.json" assert { type: "json" };
 
 const app = express();
+const openApiSpecs = await import("./docs/openapi.json", { with: { type: "json" } });
 
 app.use(cors());
 app.use(express.json());
